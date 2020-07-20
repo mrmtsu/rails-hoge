@@ -12,16 +12,20 @@ import Header from "./packs/components/Header.vue";
 export default {
   data: function() {
     return {
-      message: "Hello Vue!",
+      message: "Hello Vue!"
     };
   },
   components: {
-    Header,
-  },
+    Header
+  }
 };
 </script>
 
-<style scoped>
+<style>
+body {
+  padding: 0;
+  margin: 0;
+}
 p {
   font-size: 2em;
   text-align: center;
