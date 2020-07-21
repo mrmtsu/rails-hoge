@@ -8,10 +8,25 @@
 import Vue from "vue";
 import router from "./router";
 import App from "../app.vue";
+import Store from "./store.js";
+import VueAxios from "vue-axios";
+import {
+  securedAxiosInstance,
+  plainAxiosInstance,
+} from "../backend/axios/axios.js";
+
+Vue.config.productionTip = false;
+Vue.use(VueAxios, {
+  secured: securedAxiosInstance,
+  plain: plainAxiosInstance,
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const app = new Vue({
     router,
+    store: Store,
+    securedAxiosInstance,
+    plainAxiosInstance,
     components: { App },
     template: "<App />",
     render: (h) => h(App),
